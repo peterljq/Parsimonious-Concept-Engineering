@@ -19,8 +19,8 @@ def print_concept(each_concept, representation_path):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Print all concepts and their representations.")
-    parser.add_argument('--index_path', type=str, help="Path to the concept index file.")
-    parser.add_argument('--representation_path', type=str, help="Path to the concept representation directory.")
+    parser.add_argument('--index_path', type=str, default='./concept_index.txt', help="Path to the concept index file.")
+    parser.add_argument('--representation_path', type=str, default='./concept/', help="Path to the concept representation directory.")
 
     args = parser.parse_args()
 
