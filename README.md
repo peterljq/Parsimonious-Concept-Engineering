@@ -42,3 +42,15 @@ The following visualization shows the Sampled Activation Space of LLaMA2-13B-Cha
 
 ![Cluster Figure](./image/cluster_figure.png)
 
+## BibTeX
+If you find our work helpful, please consider citing our paper:
+
+```
+@article{luo2024pace,
+    title={PaCE: Parsimonious Concept Engineering for Large Language Models},
+    author={Jinqi Luo and Tianjiao Ding and Kwan Ho Ryan Chan and Darshan Thaker and Aditya Chattopadhyay and Chris Callison-Burch and Rene Vidal},
+    journal={arXiv preprint arXiv:2406.04331},
+    year={2024}
+}
+```
+
