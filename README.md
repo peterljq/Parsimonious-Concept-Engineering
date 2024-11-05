@@ -1,5 +1,15 @@
-# Parsimonious-Concept-Engineering
-Parsimonious Concept Engineering (PaCE) uses sparse coding on a large-scale concept dictionary to effectively improve the trustworthiness of Large Language Models by precisely controlling and modifying their neural activations. The repository contains our concept representation dataset PaCE-1M mentioned in the paper.
+# PaCE: Parsimonious Concept Engineering for Large Language Models (NeurIPS 2024)
+
+[Project Website](https://peterljq.github.io/project/pace) | [ArXiv](https://arxiv.org/abs/2406.04331) | [GitHub](https://github.com/peterljq/Parsimonious-Concept-Engineering)
+
+> Jinqi Luo*, Tianjiao Ding*, Kwan Ho Ryan Chan, Darshan Thaker, Aditya Chattopadhyay, Chris Callison-Burch, René Vidal<br>
+> *Equal contribution <br>
+> https://arxiv.org/abs/2406.04331 <br>
+>
+>**Abstract:** Large Language Models (LLMs) are being used for a wide variety of tasks. While they are capable of generating human-like responses, they can also produce undesirable output including potentially harmful information, racist or sexist language, and hallucinations. Alignment methods are designed to reduce such undesirable outputs via techniques such as fine-tuning, prompt engineering, and representation engineering. However, existing methods face several challenges: some require costly fine-tuning for every alignment task; some do not adequately remove undesirable concepts, failing alignment; some remove benign concepts, lowering the linguistic capabilities of LLMs. To address these issues, we propose Parsimonious Concept Engineering (PaCE), a novel activation engineering framework for alignment. First, to sufficiently model the concepts, we construct a large-scale concept dictionary in the activation space, in which each atom corresponds to a semantic concept. Given any alignment task, we instruct a concept partitioner to efficiently annotate the concepts as benign or undesirable. Then, at inference time, we decompose the LLM activations along the concept dictionary via sparse coding, to accurately represent the activations as linear combinations of benign and undesirable components. By removing the latter ones from the activations, we reorient the behavior of the LLM towards the alignment goal. We conduct experiments on tasks such as response detoxification, faithfulness enhancement, and sentiment revising, and show that PaCE achieves state-of-the-art alignment performance while maintaining linguistic capabilities. 
+
+## TLDR
+Parsimonious Concept Engineering (PaCE) uses sparse coding on a large-scale concept dictionary to effectively improve the trustworthiness of Large Language Models by precisely controlling and modifying their neural activations. The repository contains our concept representation dataset PaCE-1M and the implementation of the framework in the paper.
 
 ## PaCE Framework
 
@@ -48,9 +58,17 @@ If you find our work helpful, please consider citing our paper:
 ```
 @article{luo2024pace,
     title={PaCE: Parsimonious Concept Engineering for Large Language Models},
-    author={Jinqi Luo and Tianjiao Ding and Kwan Ho Ryan Chan and Darshan Thaker and Aditya Chattopadhyay and Chris Callison-Burch and Rene Vidal},
+    author={Jinqi Luo and Tianjiao Ding and Kwan Ho Ryan Chan and Darshan Thaker and Aditya Chattopadhyay and Chris Callison-Burch and Ren{\'e} Vidal},
     journal={arXiv preprint arXiv:2406.04331},
     year={2024}
 }
 ```
-
+or use the bib entry in NeurIPS format:
+```
+@inproceedings{luo2024pace,
+    title={PaCE: Parsimonious Concept Engineering for Large Language Models},
+    author={Jinqi Luo and Tianjiao Ding and Kwan Ho Ryan Chan and Darshan Thaker and Aditya Chattopadhyay and Chris Callison-Burch and Ren{\'e} Vidal},
+    booktitle={NeurIPS},
+    year={2024}
+}
+```
