@@ -52,6 +52,29 @@ The following visualization shows the Sampled Activation Space of LLaMA2-13B-Cha
 
 ![Cluster Figure](./image/cluster_figure.png)
 
+
+### Representation Decomposition via Sparse Coding
+We provide the code to sparsely decompose the representation on a collection of dictionary atoms. The `decompose()` function in `sparse_coding.py` enables zero-shot decomposition of target representations into sparse linear combinations of dictionary atoms using elastic net regularization. A basic use case is as follows:
+
+```python
+import torch
+from sparse_coding import decompose
+
+# Make target representation and the dictionary atoms
+target = torch.randn(128)  # e.g., the representation be decomposed
+dictionary = [torch.randn(128) for _ in range(10)]  # list of dictionary atoms
+
+# Decompose the target representation using the dictionary atoms
+coefficients = decompose(
+    target=target,
+    dl_dict=dictionary,
+    tau=0.95,      
+    alpha=0.05,    
+    normalize=True 
+)
+```
+
+
 ## BibTeX
 If you find our work helpful, please consider citing our paper:
 
